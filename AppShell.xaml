@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:GroceryApp"
     Shell.FlyoutBehavior="Disabled"
     Title="GroceryApp">
+    
 
     <ShellContent
         Title="Home"
