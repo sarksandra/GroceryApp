@@ -5,14 +5,15 @@
              Shell.NavBarIsVisible="False"
              xmlns:vm="clr-namespace:ViewModels"
              xmlns:model="clr-namespace:ViewModels"
-             x:DataType="vm:HomePageViewModel"
-             Title="HomePage">
-    
-             
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             x:DataType="vm:HomePageViewModel">
+
+
+    <VerticalStackLayout Padding="10, 15">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Hi, &#10;" 
+                      TextColor=""/>
+                <Span Text="Abhay" />
+            </FormattedString>
     </VerticalStackLayout>
 </ContentPage>
