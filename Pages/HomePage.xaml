@@ -9,11 +9,50 @@
 
 
     <VerticalStackLayout Padding="10, 15">
-        <Label.FormattedText>
-            <FormattedString>
-                <Span Text="Hi, &#10;" 
-                      TextColor=""/>
-                <Span Text="Abhay" />
-            </FormattedString>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Hi, &#10;" 
+                           TextColor="{StaticResource Primary}"
+                           FontSize="14"
+                           FontAttributes="Bold"/>
+                    <Span Text="Abhay" 
+                           TextColor="{StaticResource Mid}"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <BoxView HeightRequest="25" 
+                 Color="Transparent" />
+
+        <CollectionView ItemsSource="{Binding Categories}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Category">
+                    <Border StrokeShape=" RoundRectangle 5"
+                            StrokeThickness="0">
+                        <Grid>
+                            <Image Source="{Binding Image}"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   HeightRequest="175"
+                                   WidthRequest="150"/>
+
+                            <Border StrokeShape="RoundRectangle 5"
+                                    StrokeThickness="0"
+                                    BackgroundColor="White"
+                                    VerticalOptions="End">
+                                <Label Text="{Binding Name}"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
